@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Poppins:wght@400;700&display=swap");
+
+/* 
+    RESET STYLES
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 
+    GENERAL STYLES
+*/
+
+body {
+  background-color: blue;
+  color: white;
+  font-family: "Popins", sans-serif;
+}
+
+main {
+  padding-top: 74px;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.title {
+  font-family: "Oswald", sans-serif;
+}
+
+/* 
+    HEADER
+*/
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 10;
+  background: red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.nav__list {
+  display: flex;
+  gap: 25px;
+}
+.nav__link {
+  font-size: 20px;
+}
+.nav__link:hover {
+  color: aquamarine;
+}
+
+/* 
+    INTRO
+*/
+
+.intro {
+  min-height: 100vh;
+  background-color: aqua;
+  background-image: url(./img/Bg-intro.jpg);
+  color: green;
+  padding: 30px 30px;
+  position: relative;
+}
+
+.intro h1 {
+  text-align: center;
+  font-size: 48px;
+  font-style: italic;
+  font-weight: 900;
+  margin-bottom: 30px;
+}
+
+.intro h1:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.intro h1::before {
+  content: "@";
+  background-color: black;
+  display: inline-block;
+  padding: 10px;
+}
+
+.intro h1::after {
+  content: "#";
+}
+
+.intro p {
+  color: black;
+  text-align: justify;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.intro p:hover {
+  color: purple;
+}
+
+.intro p::after {
+  content: "😃";
+}
+
+.image {
+  /* float: left; */
+  z-index: 1;
+  position: sticky;
+  top: 10px;
+  left: 20px;
+}
+
+.intro article::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.intro img {
+  width: 250px;
+}
+
+.intro article:has(p) h2 {
+  text-align: right;
+}
+
+.cloud {
+  position: absolute;
+  top: 200px;
+  right: 100px;
+}
+
+.floating img {
+  width: 250px;
+}
+
+.float-left {
+  float: left;
+  margin-right: 10px;
+}
+
+.float-right {
+  float: right;
+}
+
+.floating article::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.floating article:has(.float-right) h2 {
+  text-align: right;
+}
+
+.floating {
+  background: linear-gradient(45deg, aqua, yellow);
+  padding: 50px 0px;
+}
+
+/* GALARY */
+
+.galary .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 300px;
+  grid-template-rows: max-content;
+  /* justify-content: center;
+  justify-items: center;
+  align-items: center; */
+  gap: 10px;
+  padding: 50px 0px;
+}
+.galary h2 {
+  /* grid-column-end: 4;
+  grid-column-start: 1; */
+  grid-column: 1 / span 3;
+}
+.galary-item {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.galary img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: transform 1s, opacity 0.5s linear 1s;
+}
+.galary img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.galary-item:nth-child(7) {
+  grid-row: span 2;
+}
+.galary-item:nth-of-type(4) {
+  grid-column: span 2;
+}
+
+.galary-item h4 {
+  color: chartreuse;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+.galary-item:hover h4 {
+  background-color: white;
+}
+
+.forma form {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 20px;
+}
+.up {
+  display: inline-block;
+  background-color: aqua;
+  font-size: 50px;
+  color: black;
+  width: 75px;
+  height: 75px;
+  position: fixed;
+  right: 100px;
+  bottom: 100px;
+}
+form *::placeholder {
+  color: rgba(255, 255, 255, 0.712);
+}
+textarea {
+  resize: none;
+}
+
+input {
+  margin-top: 5px;
+  width: 100%;
+  outline-color: transparent;
+}
+
+fieldset {
+  border: none;
+  margin: 10px 0px;
+}
+
+footer {
+  padding: 25px 10px;
+  text-align: center;
+}
